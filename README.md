@@ -16,18 +16,24 @@ The Task Manager allows you to add, view, and mark tasks as complete. Each task 
 To build the project, run the following command from the root directory:
 
 ```bash
-mvn clean install
+mvn package
 ```
 
 This will compile the source code, run the tests, and package the application into a JAR file in the `target` directory.
 
 ## Usage
 
-To run the application, you can use the following command:
+To run the application as a command-line interface (CLI), use the following command:
 
 ```bash
-mvn exec:java -Dexec.mainClass="com.example.taskmanager.TaskManager"
+mvn exec:java -Dexec.mainClass="com.example.taskmanager.Main"
 ```
+
+The CLI supports the following commands:
+- `add <description>`: Adds a new task.
+- `list`: Displays all tasks.
+- `complete <task_id>`: Marks a task as complete.
+- `exit`: Exits the application.
 
 ## Running Tests
 

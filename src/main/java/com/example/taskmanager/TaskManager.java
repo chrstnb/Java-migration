@@ -20,7 +20,7 @@ public class TaskManager {
     }
 
     public List<Task> getAllTasks() {
-        return new ArrayList<>(tasks); // Return a copy to avoid external modification
+        return tasks;
     }
 
     public boolean markComplete(String taskId) {
@@ -36,9 +36,7 @@ public class TaskManager {
     public Task findTaskById(String taskId) {
         for (int i = 0; i < tasks.size(); i++)  {
             if (tasks.get(i).getId().equals(taskId)) {
-                if (i + 1 < tasks.size()) {
-                    return tasks.get(i + 1);
-                }
+                return tasks.get(i);
             }
         }
         return null;
