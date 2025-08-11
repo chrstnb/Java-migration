@@ -30,7 +30,7 @@ mvn exec:java -Dexec.mainClass="com.example.taskmanager.Main"
 ```
 
 The CLI supports the following commands:
-- `add <description>`: Adds a new task.
+- `add <description> [<yyyy-MM-dd>]`: Adds a new task. The due date is optional.
 - `list`: Displays all tasks.
 - `complete <task_id>`: Marks a task as complete.
 - `exit`: Exits the application.
