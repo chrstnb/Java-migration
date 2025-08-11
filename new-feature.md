@@ -49,21 +49,3 @@ java -jar taskmanager.jar listByPriority
 ID: 1, Task: "Deploy the new feature", Status: PENDING, Priority: HIGH
 ID: 2, Task: "Write documentation", Status: PENDING, Priority: MEDIUM
 ```
-
-## 3. Implementation Sketch
-
-1.  **`Task.java`:**
-    *   Add a `Priority` enum: `enum Priority { HIGH, MEDIUM, LOW }`.
-    *   Add a `private Priority priority;` field to the `Task` class.
-    *   Update the constructor to accept a priority, defaulting to `MEDIUM`.
-    *   Add a `getPriority()` getter.
-
-2.  **`TaskManager.java`:**
-    *   Update the `addTask(String description)` method to parse an optional priority flag.
-    *   Modify the `listTasks()` method to include the priority in the output string.
-    *   Implement a new `listByPriority()` method that retrieves tasks and sorts them based on the `Priority` enum's ordinal value.
-
-3.  **`TaskManagerTest.java`:**
-    *   Add tests to verify that a task is created with the correct default priority.
-    *   Add tests to verify that a task is created with a specified priority.
-    *   Add tests for the `listByPriority()` method to ensure the sorting is correct.
